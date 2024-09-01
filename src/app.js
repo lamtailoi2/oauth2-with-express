@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 import passport from "passport";
 import session from "express-session";
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3001;
 
 mongoose.connect(process.env.DB_URL).then(() => {
     console.log("Connected to MongoDB");
@@ -52,6 +52,6 @@ app.get('/', (req, res) => {
     req.logout(() => res.redirect('/'));
   });
   
-  app.listen(3000, () => {
-    console.log('Server started on http://localhost:3000');
+  app.listen(port, () => {
+    console.log(`Server started on http://localhost:${port}`);
   });
