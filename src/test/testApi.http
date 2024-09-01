@@ -1,0 +1,13 @@
+### Test Check
+
+GET http://localhost:3000/
+
+
+### Test Register 
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "admin"
+}
